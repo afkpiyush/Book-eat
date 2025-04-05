@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book-Eat Login</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="top-banner">
+      <h1>Book-<span class="highlight">Eat</span></h1>
+    </div>
+    <div class="form-box">
+      <p class="welcome">Welcome</p>
+      <p class="tagline">Come and join us to get the best experience of food</p>
+      <p class="tagline bold">Login to book your food now</p>
+
+      <label for="email">College Email</label>
+      <input type="email" id="email" placeholder="example@example.com" />
+
+      <label for="password">Password</label>
+      <div class="password-wrapper">
+        <input type="password" id="password" placeholder="************" />
+        <span class="toggle-password" onclick="togglePassword()">👁️</span>
+      </div>
+
+      <p class="forgot"><a href="#">Forget Password</a></p>
+
+      <button onclick="handleLogin()">Log In</button>
+
+      <p class="signup">Don’t have an account? <a href="#">Sign Up</a></p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menu - Book-Eat</title>
+  <link rel="stylesheet" href="vit-menu.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="top-banner">
+      <p class="tagline">Satisfy Your Cravings With Flavors That Speak Louder Than Words – Where Every Bite Feels Like A Celebration!</p>
+      <div class="icons">
+        <span>👤</span>
+        <span>🔔</span>
+        <span>📦</span>
+        <span>💳</span>
+      </div>
+    </div>
+
+    <div class="category-bar">
+      <button class="category active" onclick="switchCategory('snacks')">🍟<br>Snacks</button>
+      <button class="category" onclick="switchCategory('meal')">🍽️<br>Meal</button>
+      <button class="category" onclick="switchCategory('chinese')">🥡<br>Chinese</button>
+      <button class="category" onclick="switchCategory('egg')">🥚<br>Egg</button>
+      <button class="category" onclick="switchCategory('paratha')">🥙<br>Paratha</button>
+    </div>
+
+    <div class="menu-items" id="menuList">
+      <!-- Items will be loaded dynamically -->
+    </div>
+
+    <div class="bottom-nav">
+      <button onclick="goHome()">
+        <span class="icon">🏠</span>
+      </button>
+      <button onclick="goToCart()">
+        <span class="icon">🛒</span>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+
+  <script src="vit-menu.js"></script>
+</body>
+</html>

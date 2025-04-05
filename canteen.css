@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+  }
+  
+  body {
+    background-color: #1d3557;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .container {
+    width: 360px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+  
+  .header {
+    background-color: #feca57;
+    padding: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    text-align: center;
+  }
+  
+  .header h2 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .header span {
+    font-size: 22px;
+    font-style: italic;
+  }
+  
+  .canteens {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .canteen {
+    width: 47%;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .canteen:hover {
+    transform: scale(1.05);
+  }
+  
+  .img-box {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-color: #d3d3d3;
+    border-radius: 16px;
+    margin-bottom: 10px;
+    transition: background 0.3s ease;
+  }
+  
+  /* Optional: add background images instead of grey box
+  .img-box.vit {
+    background-image: url('vit.png');
+    background-size: cover;
+    background-position: center;
+  }
+  */
+  
+  .canteen p {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
