@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #1d3557;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    width: 360px;
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  .top-banner {
+    background-color: #feca57;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .top-banner h1 {
+    font-size: 32px;
+    font-weight: bold;
+  }
+  
+  .top-banner .highlight {
+    color: black;
+    font-style: italic;
+  }
+  
+  .form-box {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .welcome {
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 18px;
+    color: #5a2a0c;
+  }
+  
+  .tagline {
+    font-family: 'Georgia', serif;
+    font-size: 14px;
+    margin: 4px 0;
+  }
+  
+  .tagline.bold {
+    font-weight: bold;
+  }
+  
+  label {
+    display: block;
+    text-align: left;
+    margin-top: 16px;
+    font-weight: bold;
+  }
+  
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: none;
+    border-radius: 8px;
+    background-color: #fef3c7;
+    font-size: 16px;
+  }
+  
+  .password-wrapper {
+    position: relative;
+  }
+  
+  .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    cursor: pointer;
+  }
+  
+  .forgot {
+    text-align: right;
+    margin-top: 5px;
+    font-size: 12px;
+  }
+  
+  .forgot a {
+    color: red;
+    text-decoration: none;
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 12px;
+    width: 100%;
+    background-color: #f85f33;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+  
+  .signup {
+    font-size: 13px;
+    margin-top: 15px;
+  }
+  
+  .signup a {
+    color: #f85f33;
+    text-decoration: none;
+  }
+  
