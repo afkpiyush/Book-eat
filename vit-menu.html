@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book-Eat - VIT Menu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="vit-menu.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header Section -->
+        <div class="header-section">
+            <div class="top-bar">
+                <button class="menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+                <div class="profile-icon">
+                    <img src="images/profile.png" alt="Profile">
+                </div>
+                <div class="cart-icon-container">
+                    <button class="cart-toggle-btn">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span class="cart-count">0</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="breadcrumb">
+                <span>Store</span>
+                <i class="fas fa-chevron-right"></i>
+                <span>VIT Canteen</span>
+            </div>
+            
+            <div class="store-banner">
+                <div class="store-logo">
+                    <img src="images/vit-logo.png" alt="VIT Canteen">
+                </div>
+                <div class="store-info">
+                    <h2>VIT Canteen</h2>
+                    <p>Fresh & healthy food options</p>
+                </div>
+                <div class="store-stats">
+                    <div class="stat">
+                        <h3>24</h3>
+                        <p>Total Items</p>
+                    </div>
+                    <div class="stat">
+                        <h3>09</h3>
+                        <p>Category</p>
+                    </div>
+                    <div class="stat">
+                        <h3>04</h3>
+                        <p>Outlets</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Category Navigation -->
+        <div class="category-nav">
+            <div class="category-item active" data-category="salad">
+                <div class="category-icon">
+                    <img src="images/salad-icon.png" alt="Salad">
+                </div>
+                <span>Salad</span>
+            </div>
+            <div class="category-item" data-category="salad-alt">
+                <div class="category-icon">
+                    <img src="images/salad-alt-icon.png" alt="Salad">
+                </div>
+                <span>Salad</span>
+            </div>
+            <div class="category-item" data-category="pizza">
+                <div class="category-icon">
+                    <img src="images/pizza-icon.png" alt="Pizza">
+                </div>
+                <span>Pizza</span>
+            </div>
+            <div class="category-item" data-category="steak">
+                <div class="category-icon">
+                    <img src="images/steak-icon.png" alt="Steak">
+                </div>
+                <span>Steak Meat</span>
+            </div>
+            <div class="category-item" data-category="drinks">
+                <div class="category-icon">
+                    <img src="images/drinks-icon.png" alt="Drinks">
+                </div>
+                <span>Drinks</span>
+            </div>
+            <div class="category-item" data-category="pizza-alt">
+                <div class="category-icon">
+                    <img src="images/pizza-alt-icon.png" alt="Pizza">
+                </div>
+                <span>Pizza</span>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Salad Category -->
+            <div class="menu-category active" id="salad-menu">
+                <h2 class="section-title">Salad Menu</h2>
+                
+                <div class="menu-grid">
+                    <!-- Menu Item 1 -->
+                    <div class="menu-item" data-item-id="fresh-salad">
+                        <div class="menu-item-image">
+                            <img src="images/fresh-salad.jpg" alt="Fresh and Health Salad">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Fresh and Health Salad</h3>
+                            <div class="menu-item-meta">
+                                <span>80 calories</span>
+                                <span>•</span>
+                                <span>4 persons</span>
+                            </div>
+                            <div class="menu-item-footer">
+                                <div class="price">₹2.65</div>
+                                <button class="add-to-cart-btn" data-item-id="fresh-salad">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Menu Item 2 -->
+                    <div class="menu-item" data-item-id="cashew-chicken">
+                        <div class="menu-item-image">
+                            <img src="images/cashew-chicken.jpg" alt="Cashew Nut Chicken Salad">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Cashew Nut Chicken Salad</h3>
+                            <div class="menu-item-meta">
+                                <span>80 calories</span>
+                                <span>•</span>
+                                <span>4 persons</span>
+                            </div>
+                            <div class="menu-item-footer">
+                                <div class="price">₹2.65</div>
+                                <button class="add-to-cart-btn" data-item-id="cashew-chicken">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Menu Item 3 -->
+                    <div class="menu-item" data-item-id="crunchy-cashew">
+                        <div class="menu-item-image">
+                            <img src="images/crunchy-cashew.jpg" alt="Crunchy Cashew Salad">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Crunchy Cashew Salad</h3>
+                            <div class="menu-item-meta">
+                                <span>80 calories</span>
+                                <span>•</span>
+                                <span>4 persons</span>
+                            </div>
+                            <div class="menu-item-footer">
+                                <div class="price">₹2.65</div>
+                                <button class="add-to-cart-btn" data-item-id="crunchy-cashew">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Menu Item 4 -->
+                    <div class="menu-item" data-item-id="sesame-dressing">
+                        <div class="menu-item-image">
+                            <img src="images/sesame-dressing.jpg" alt="Sesame Dressing Salad">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Sesame Dressing Salad</h3>
+                            <div class="menu-item-meta">
+                                <span>60 calories</span>
+                                <span>•</span>
+                                <span>4 persons</span>
+                            </div>
+                            <div class="menu-item-footer">
+                                <div class="price">₹2.65</div>
+                                <button class="add-to-cart-btn" data-item-id="sesame-dressing">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pizza Category -->
+            <div class="menu-category" id="pizza-menu">
+                <h2 class="section-title">Pizza Menu</h2>
+                
+                <div class="menu-grid">
+                    <!-- Menu Item 1 -->
+                    <div class="menu-item" data-item-id="margherita">
+                        <div class="menu-item-image">
+                            <img src="images/margherita.jpg" alt="Margherita Pizza">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Margherita Pizza</h3>
+                            <div class="menu-item-meta">
+                                <span>320 calories</span>
+                                <span>•</span>
+                                <span>2 persons</span>
+                            </div>
+                            <div class="menu-item-footer">
+                                <div class="price">₹3.99</div>
+                                <button class="add-to-cart-btn" data-item-id="margherita">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Menu Item 2 -->
+                    <div class="menu-item" data-item-id="pepperoni">
+                        <div class="menu-item-image">
+                            <img src="images/pepperoni.jpg" alt="Pepperoni Pizza">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Pepperoni Pizza</h3>
+                            <div class="menu-item-meta">
+                                <span>380 calories</span>
+                                <span>•</span>
+                                <span>2 persons</span>
+                            </div>
+                            <div class="menu-item-footer">
+                                <div class="price">₹4.50</div>
+                                <button class="add-to-cart-btn" data-item-id="pepperoni">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Steak Category -->
+            <div class="menu-category" id="steak-menu">
+                <h2 class="section-title">Steak Menu</h2>
+                
+                <div class="menu-grid">
+                    <!-- Menu Item 1 -->
+                    <div class="menu-item" data-item-id="ribeye">
+                        <div class="menu-item-image">
+                            <img src="images/ribeye.jpg" alt="Ribeye Steak">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Ribeye Steak</h3>
+                            <div class="menu-item-meta">
+                                <span>450 calories</span>
+                                <span>•</span>
+                                <span>1 person</span>
+                            </div>
+                            <div class="menu-item-footer">
+                                <div class="price">₹6.99</div>
+                                <button class="add-to-cart-btn" data-item-id="ribeye">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drinks Category -->
+            <div class="menu-category" id="drinks-menu">
+                <h2 class="section-title">Drinks Menu</h2>
+                
+                <div class="menu-grid">
+                    <!-- Menu Item 1 -->
+                    <div class="menu-item" data-item-id="coke">
+                        <div class="menu-item-image">
+                            <img src="images/coke.jpg" alt="Coke">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Coke</h3>
+                            <div class="menu-item-meta">
+                                <span>150 calories</span>
+                                <span>•</span>
+                                <span>1 person</span>
+                            </div>
+                            <div class="menu-item-footer">
+                                <div class="price">₹1.50</div>
+                                <button class="add-to-cart-btn" data-item-id="coke">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Cart Sidebar -->
+        <div class="cart-sidebar">
+            <div class="cart-header">
+                <h3>My cart</h3>
+                <button class="close-cart-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="cart-items">
+                <!-- Cart items will be dynamically populated by JavaScript -->
+            </div>
+            
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span class="subtotal-amount">₹0.00</span>
+                </div>
+                <div class="summary-row discount">
+                    <span>Discount</span>
+                    <span>%10</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Final</span>
+                    <span class="total-amount">₹0.00</span>
+                </div>
+                <button class="checkout-btn">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="vit-menu.js"></script>
+</body>
+</html>
