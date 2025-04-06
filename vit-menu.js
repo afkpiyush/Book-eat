@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeCartBtn = document.querySelector('.close-cart-btn');
     const checkoutBtn = document.querySelector('.checkout-btn');
     const cartCount = document.querySelector('.cart-count');
+    const quantityBtns = document.querySelectorAll('.quantity-btn');
     
     // Category navigation
     categoryItems.forEach(item => {
@@ -64,17 +65,62 @@ document.addEventListener('DOMContentLoaded', function() {
             // Update UI
             updateCartCount();
             updateCartSidebar();
+            updateItemQuantityDisplay(itemId);
             
             // Animation for add to cart button
-            this.classList.add('animate__animated', 'animate__pulse');
-            setTimeout(() => {
-                this.classList.remove('animate__animated', 'animate__pulse');
-            }, 500);
+            animateElement(this);
             
             // Show toast notification
             showToast('Item added to cart', 'success');
         });
     });
+    
+    // Quantity buttons in menu
+    if (quantityBtns) {
+        quantityBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const itemId = this.getAttribute('data-item-id');
+                const menuItem = this.closest('.menu-item');
+                const itemName = menuItem.querySelector('h3').textContent;
+                const itemPrice = parseFloat(menuItem.querySelector('.price').textContent.replace('₹', '').replace('$', ''));
+                const itemImage = menuItem.querySelector('.menu-item-image img').src;
+                
+                if (this.classList.contains('plus-btn')) {
+                    // Add to cart object
+                    if (!cart[itemId]) {
+                        cart[itemId] = {
+                            id: itemId,
+                            name: itemName,
+                            price: itemPrice,
+                            quantity: 0,
+                            image: itemImage
+                        };
+                    }
+                    
+                    cart[itemId].quantity++;
+                    showToast('Item added to cart', 'success');
+                } else if (this.classList.contains('minus-btn')) {
+                    if (cart[itemId] && cart[itemId].quantity > 1) {
+                        cart[itemId].quantity--;
+                    } else if (cart[itemId] && cart[itemId].quantity === 1) {
+                        delete cart[itemId];
+                        showToast('Item removed from cart', 'success');
+                    }
+                }
+                
+                // Save cart to localStorage
+                saveCart();
+                
+                // Update UI
+                updateCartCount();
+                updateCartSidebar();
+                updateItemQuantityDisplay(itemId);
+                
+                // Animation
+                animateElement(this);
+            });
+        });
+    }
     
     // Toggle cart sidebar
     cartToggleBtn.addEventListener('click', function() {
@@ -93,9 +139,8 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Here you would redirect to checkout page
-        alert('Proceeding to checkout with ' + Object.keys(cart).length + ' items');
-        // window.location.href = 'checkout.html';
+        // Redirect to checkout page
+        window.location.href = 'checkout.html';
     });
     
     // Helper Functions
@@ -162,6 +207,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
+    function updateItemQuantityDisplay(itemId) {
+        const quantityElements = document.querySelectorAll(`.item-quantity[data-item-id="${itemId}"]`);
+        
+        if (quantityElements.length > 0) {
+            const quantity = cart[itemId] ? cart[itemId].quantity : 0;
+            
+            quantityElements.forEach(element => {
+                element.textContent = quantity;
+            });
+        }
+    }
+    
+    function animateElement(element) {
+        element.classList.add('animate__animated', 'animate__pulse');
+        setTimeout(() => {
+            element.classList.remove('animate__animated', 'animate__pulse');
+        }, 500);
+    }
+    
     // Define cart functions in global scope for the onclick handlers
     window.increaseQuantity = function(itemId) {
         if (cart[itemId]) {
@@ -169,6 +233,7 @@ document.addEventListener('DOMContentLoaded', function() {
             saveCart();
             updateCartCount();
             updateCartSidebar();
+            updateItemQuantityDisplay(itemId);
         }
     };
     
@@ -178,6 +243,7 @@ document.addEventListener('DOMContentLoaded', function() {
             saveCart();
             updateCartCount();
             updateCartSidebar();
+            updateItemQuantityDisplay(itemId);
         } else if (cart[itemId] && cart[itemId].quantity === 1) {
             // If quantity is 1, remove the item
             removeFromCart(itemId);
@@ -190,6 +256,7 @@ document.addEventListener('DOMContentLoaded', function() {
             saveCart();
             updateCartCount();
             updateCartSidebar();
+            updateItemQuantityDisplay(itemId);
             showToast('Item removed from cart', 'success');
         }
     };
@@ -204,6 +271,11 @@ document.addEventListener('DOMContentLoaded', function() {
             try {
                 cart = JSON.parse(savedCart);
                 updateCartCount();
+                
+                // Update all item quantity displays
+                for (const itemId in cart) {
+                    updateItemQuantityDisplay(itemId);
+                }
             } catch (error) {
                 console.error('Error loading cart:', error);
                 cart = {};
@@ -245,6 +317,25 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             toast.remove();
         }, 3000);
+    }
+    
+    // Search functionality
+    const searchInput = document.querySelector('.search-bar input');
+    if (searchInput) {
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase().trim();
+            const menuItems = document.querySelectorAll('.menu-item');
+            
+            menuItems.forEach(item => {
+                const itemName = item.querySelector('h3').textContent.toLowerCase();
+                
+                if (searchTerm === '' || itemName.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
     }
     
     // Initialize
