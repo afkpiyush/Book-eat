@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Simulated database of users
     const usersDatabase = {
         "piyush.patil24@vit.edu": "12410626",
-        "user@college.com": "securePass"
+        "user@college.com": "securePass",
+        "soham.hundlani24@vit.edu": "12412713"
     };
 
     // Password visibility toggle
